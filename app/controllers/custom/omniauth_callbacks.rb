@@ -2,7 +2,9 @@ class Custom::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksCo
   rescue_from ActiveRecord::RecordNotUnique, with: :user_exists_with_other_providers
 
   def user_exists_with_other_providers
-    @resource = User.find_by_email(@resource.email)
+    @resource = resource_class.where({
+                  email: auth_hash['email']]
+                  })
 
     create_token_info
     set_token_on_resource
