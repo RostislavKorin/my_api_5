@@ -8,9 +8,9 @@ class Custom::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksCo
     set_token_on_resource
     create_auth_params
 
-    # if resource_class.devise_modules.include?(:confirmable)
-    #   @resource.skip_confirmation!
-    # end
+    if resource_class.devise_modules.include?(:confirmable)
+      @resource.skip_confirmation!
+    end
 
     if @resource.image.nil?
       @resource.image = get_large_image(auth_hash['info']['image'])
