@@ -1,4 +1,4 @@
-class Api::V1::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksController
+class OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksController
   rescue_from ActiveRecord::RecordNotUnique, with: :user_exists_with_other_providers
 
   def user_exists_with_other_providers
