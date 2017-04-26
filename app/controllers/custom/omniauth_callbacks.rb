@@ -3,7 +3,7 @@ class Custom::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksCo
 
   def user_exists_with_other_providers
     @resource = resource_class.where({
-                  email: auth_hash['email']]
+                  email: auth_hash['email']
                   })
 
     create_token_info
