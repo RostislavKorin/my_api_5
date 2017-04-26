@@ -1,5 +1,5 @@
-class OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksController
-  # rescue_from ActiveRecord::RecordNotUnique, with: :user_exists_with_other_providers
+class Custom::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksController
+  rescue_from ActiveRecord::RecordNotUnique, with: :user_exists_with_other_providers
 
   def user_exists_with_other_providers
     @resource = User.find_by_email(@resource.email)
