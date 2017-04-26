@@ -1,3 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook,      746909988822087, "66143cf36b336c9690ff27f33ffa1862"
+  provider :facebook,      ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
+  provider :github,        ENV['GITHUB_KEY'],   ENV['GITHUB_SECRET'],   scope: 'email,profile'
 end
