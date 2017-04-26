@@ -18,7 +18,7 @@ class Custom::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksCo
     if @resource.nickname.nil?
       @resource.nickname = auth_hash['info']['nickname']
     end
-    @resource.provider = auth_hash['info']['provider']
+    @resource.provider = auth_hash['provider']
 
     sign_in(:user, @resource, store: false, bypass: false)
     @resource.save!
