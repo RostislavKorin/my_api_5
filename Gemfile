@@ -22,6 +22,7 @@ gem 'puma', '~> 3.0'
 gem 'devise_token_auth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
+# gem 'omniauth-twitter'
 gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
